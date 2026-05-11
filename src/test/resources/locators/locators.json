@@ -1,0 +1,16 @@
+{
+  "LoginPage": {
+    "usernameField": {
+      "type": "xpath",
+      "value": "//input[@id='user-name']"
+    },
+    "passwordField": {
+      "type": "xpath",
+      "value": "//input[@id='password']"
+    },
+    "loginButton": {
+      "type": "xpath",
+      "value": "//input[@id='login-button'] | //button[contains(translate(text(),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),'Login')]"
+    }
+  }
+}

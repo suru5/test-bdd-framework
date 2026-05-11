@@ -1,0 +1,34 @@
+# Maven build output
+target/
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Test reports (generated at runtime, not source code)
+reports/
+logs/
+
+# Screenshots (generated at runtime)
+reports/screenshots/
+
+# Allure results (generated at runtime)
+target/allure-results/
+target/site/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets — NEVER commit API keys
+.env
+*.env
+
+# WebDriverManager cached drivers
+.wdm/
+
+# ide
+.vscode
+.idea
