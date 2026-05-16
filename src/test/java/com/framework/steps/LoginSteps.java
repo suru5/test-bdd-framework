@@ -1,5 +1,6 @@
 package com.framework.steps;
 
+import com.framework.core.TestDataReader;
 import com.framework.pages.LoginPage;
 import com.framework.utils.ExtentReportManager;
 import com.framework.utils.ScreenshotUtil;
@@ -33,28 +34,21 @@ public class LoginSteps {
 
     // ── Input Actions ────────────────────────────────────────────────────────
 
-    @When("the user enters email {string}")
+    @When("the user logs in with valid credentials")
     @Step("Enter email/username: {0}")
-    public void enterEmail(String email) {
-        log.info("Step: Enter email = {}", email);
-        loginPage.enterUsername(email);
-        captureStep("Entered email: " + email);
-    }
-
-    @When("the user enters the login password {string}")
-    @Step("Enter login password")
-    public void enterPassword(String password) {
-        log.info("Step: Enter password");
+    public void enterEmail() {
+        String username = TestDataReader.get("Login", "validUser", "username");
+        String password = TestDataReader.get("Login", "validUser", "password");
+        loginPage.enterUsername(username);
+        captureStep("Entered email: " + username);
         loginPage.enterPassword(password);
-        captureStep("Entered password");
-    }
+        captureStep("Entered password: " + password);
 
-    @When("the user clicks the sign in button")
-    @Step("Click the Sign In / Login button")
-    public void clickSignIn() {
         log.info("Step: Click sign in button");
         loginPage.clickLoginButton();
         captureStep("Clicked Sign In button");
+
+        log.info("Step: User entered successfully");
     }
 
     @And("the user clicks the logout link")

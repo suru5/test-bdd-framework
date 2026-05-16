@@ -42,6 +42,10 @@ public interface FrameworkConfig extends Config {
     @DefaultValue("30")
     int pageLoadTimeout();
 
+    @Key("keep.browser.open")
+    @DefaultValue("false")
+    boolean keepBrowserOpen();
+
     /* ─────────────── Application ─────────────── */
     @Key("base.url")
     @DefaultValue("https://www.saucedemo.com/inventory.html")

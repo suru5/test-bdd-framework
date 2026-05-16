@@ -75,7 +75,13 @@ public class TestHooks {
         } catch (Exception e) {
             log.warn("Error in teardown hook: {}", e.getMessage());
         } finally {
-            DriverManager.quitDriver();
+            // ── Only quit if keep.browser.open=false ──
+            if (!ConfigManager.get().keepBrowserOpen()) {
+                DriverManager.quitDriver();
+                log.info("Browser closed after scenario.");
+            } else {
+                log.info("Browser kept open (keep.browser.open=true).");
+            }
             ExtentReportManager.removeTest();
         }
     }

@@ -1,6 +1,6 @@
 {
   "Urls": {
-    "loginPage": "/login"
+    "loginPage": "/"
   },
   "Login": {
     "validUser": {
